@@ -1,0 +1,27 @@
+{
+  "short_name": "Playzone",
+  "name": "Playzone — Ücretsiz Online Oyunlar",
+  "description": "Tarayıcında ücretsiz oyna, skor kazan, liderlik tablosuna gir!",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#6c63ff",
+  "background_color": "#0f0f13",
+  "categories": ["games", "entertainment"],
+  "lang": "tr",
+  "scope": "/"
+}
