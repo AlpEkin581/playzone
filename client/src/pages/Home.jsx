@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import GameCard from '../components/GameCard';
+import API_URL from '../config';
 
 const Home = () => {
   const [games, setGames]     = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/games')
+    fetch(`${API_URL}/api/games`)
       .then(r => r.json())
       .then(data => { setGames(data); setLoading(false); });
   }, []);

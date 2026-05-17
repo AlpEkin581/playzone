@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
+import API_URL from '../config';
 
 // ─── Sabitler ────────────────────────────────────────────────────────────────
 const WEAPONS = [
@@ -669,7 +670,7 @@ const GamePage = () => {
   const { user, token }           = useAuth();
 
   useEffect(() => {
-    fetch('/api/games/hellblast')
+    fetch(`${API_URL}/api/games/hellblast`)
       .then(r => r.json())
       .then(data => { setGameData(data); setPhase('start'); });
   }, []);
@@ -678,7 +679,7 @@ const GamePage = () => {
     setFinalScore(score);
     setPhase('dead');
     if (user && token && gameData) {
-      await fetch('/api/scores', {
+      await fetch(`${API_URL}/api/scores`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ game_id: gameData.id, score }),
@@ -825,7 +826,7 @@ const GamePage = () => {
 const LeaderboardMini = ({ gameId }) => {
   const [scores, setScores] = useState([]);
   useEffect(() => {
-    fetch(`/api/scores/leaderboard/${gameId}`)
+    fetch(`${API_URL}/api/scores/leaderboard/${gameId}`)
       .then(r => r.json())
       .then(setScores);
   }, [gameId]);

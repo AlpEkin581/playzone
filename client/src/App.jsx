@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar    from './components/Navbar';
 import Home      from './pages/Home';
 import GamePage  from './pages/GamePage';
+import SquidGame from './pages/SquidGame';
 import Login     from './pages/Login';
 import Register  from './pages/Register';
 import './index.css';
@@ -12,10 +13,11 @@ const App = () => (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/"              element={<Home />} />
-        <Route path="/game/:slug"    element={<GamePage />} />
-        <Route path="/login"         element={<Login />} />
-        <Route path="/register"      element={<Register />} />
+        <Route path="/"                   element={<Home />} />
+        <Route path="/game/hellblast"     element={<GamePage />} />
+        <Route path="/game/squid-game"    element={<SquidGame />} />
+        <Route path="/login"              element={<Login />} />
+        <Route path="/register"           element={<Register />} />
       </Routes>
     </BrowserRouter>
   </AuthProvider>

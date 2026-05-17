@@ -3,7 +3,7 @@ const { pool } = require('../db');
 
 const router = express.Router();
 
-// GET /api/games
+// Tüm oyunları oynanma sayısına göre sıralayarak getirir
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM games ORDER BY plays DESC');
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /api/games/:slug
+// Belirli bir oyunu slug ismine göre getirir ve oynanma sayısını 1 artırır
 router.get('/:slug', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM games WHERE slug = $1', [req.params.slug]);
