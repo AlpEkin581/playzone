@@ -29,7 +29,7 @@ const Navbar = () => {
       }}>
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <img src="/logo.png" alt="Playzone" style={{ width: 36, height: 36, borderRadius: 8, objectFit: 'contain', background: '#000' }}
+          <img src="/logo.png" alt="Playzone" style={{ width: 36, height: 36, borderRadius: 8, objectFit: 'contain', background: '#000' }} />
           <span style={{ fontSize: 22, fontWeight: 900, letterSpacing: -1 }}>
             <span style={{ color: '#6c63ff' }}>Play</span>
             <span style={{ color: '#e8e8f0' }}>zone</span>
